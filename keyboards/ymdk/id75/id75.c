@@ -16,6 +16,7 @@
 
 #include "quantum.h"
 
+
 #ifdef RGB_MATRIX_ENABLE
 bool rgb_matrix_indicators_kb(void) {
     if (!rgb_matrix_indicators_user()) {
@@ -23,10 +24,10 @@ bool rgb_matrix_indicators_kb(void) {
     }
 
     if (host_keyboard_led_state().caps_lock) { // Capslock = RED
-        rgb_matrix_set_color(44, 200, 80, 0);
+        rgb_matrix_set_color(29, 200, 80, 0);
     }
     else{
-        rgb_matrix_set_color(44, 0, 0, 0);
+        rgb_matrix_set_color(29, 0, 0, 0);
     }
     return true;
 }
