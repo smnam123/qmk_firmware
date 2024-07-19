@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 jonylee@hfd
+/* Copyright 2021 MT
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,8 @@ enum custom_macros {
     MACRO_0 = SAFE_RANGE,
     MACRO_1,
     MACRO_2,
-    MACRO_3
+    MACRO_3,
+    MACRO_4
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -43,9 +44,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * |------+------+------+------+------+------+------+------+------+------+------+------+------+------+------|
     * | Tab  |   Q  |   W  |   E  |   R  |   T  |  F1  |  F2  |  F3  |   Y  |   U  |   I  |   O  |   P  |  "   |
     * |------+------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-    * | Caps |   A  |   S  |   D  |   F  |   G  |  F4  |  F5  |  F6  |   H  |   J  |   K  |   L  |   ;  |RShft |
+    * | LShft|   A  |   S  |   D  |   F  |   G  |  F4  |  F5  |  F6  |   H  |   J  |   K  |   L  |   ;  |RShft |
     * |------+------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-    * | LShft|   Z  |   X  |   C  |   V  |   B  |  F7  |  F8  |  F9  |   N  |   M  |   ,  |   .  |   /  |Enter |
+    * | Caps |   Z  |   X  |   C  |   V  |   B  |  F7  |  F8  |  F9  |   N  |   M  |   ,  |   .  |   /  |Enter |
     * |------+------+------+------+------+------+------+------+------+------+------+------+------+------+------|
     * | LCtl | LGUI | LAlt |   `  | LSpc |  Fn  |  F10 |  F11 |  F12 | PrtSc| RSpc | RAlt |   [  |   ]  |RCtrl |
     * `--------------------------------------------------------------------------------------------------------'
@@ -64,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * |------+------+------+------+------+------+------+------+------+------+------+------+------+------+------|
     * |      |      |      | Mcr3 | Mcr2 | Mcr0 |      |      |      |      |  Br+ |      |      | RTog |      |
     * |------+------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-    * |      |      |      |      | Mcr1 |  Fn2 |      |      |      |      |  Br- |      |      |      |      |
+    * |      |      |      | Mcr4 | Mcr1 |  Fn2 |      |      |      |      |  Br- |      |      |      |      |
     * |------+------+------+------+------+------+------+------+------+------+------+------+------+------+------|
     * |      |      |      | Calc |      |KeyLoc|      |      |      |      |      | Mod← | Mod→ |      |      |
     * |------+------+------+------+------+------+------+------+------+------+------+------+------+------+------|
@@ -74,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FUNC] = LAYOUT_ortho_5x15(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RGB_SPD, RGB_SPI, _______, _______,
         _______, _______, _______, MACRO_3, MACRO_2, MACRO_0, _______, _______, _______, _______, RGB_VAI, _______, _______, RGB_TOG, _______,
-        _______, _______, _______, _______, MACRO_1, MO(2),   _______, _______, _______, _______, RGB_VAD, _______, _______, _______, _______,
+        _______, _______, _______, MACRO_4, MACRO_1, MO(2),   _______, _______, _______, _______, RGB_VAD, _______, _______, _______, _______,
         _______, _______, _______, KC_CALC, _______, QK_LOCK, _______, _______, _______, _______, _______, RGB_RMOD,RGB_MOD, _______, _______,
         _______, _______, _______, _______, _______, KC_TRNS, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
@@ -142,6 +143,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     //🡱+🡱+⎵
                     SS_DOWN(X_UP) SS_DELAY(12) SS_UP(X_UP) SS_DELAY(13) SS_DOWN(X_UP) SS_DELAY(11) SS_UP(X_UP) SS_DELAY(12)
                     SS_DOWN(X_SPC) SS_DELAY(12) SS_UP(X_SPC) SS_DELAY(5)
+                );
+            }
+            break;
+
+        case MACRO_4:
+            if (record->event.pressed) {
+                SEND_STRING(
+                    //🡰+Enter
+                    SS_DOWN(X_LEFT) SS_DELAY(5) SS_UP(X_LEFT) SS_DELAY(5) SS_DOWN(X_ENT) SS_DELAY(5) SS_UP(X_ENT)
                 );
             }
             break;
