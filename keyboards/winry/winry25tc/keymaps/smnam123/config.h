@@ -16,5 +16,19 @@
 
 #pragma once
 
-/* 4 by default */
-#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+
+#define TAPPING_TOGGLE 1
+
+#define RGBLIGHT_LAYERS
+
+/* Defining Lighting Layers - by default 8 */
+#define RGBLIGHT_MAX_LAYERS 9 
+
+/* Retain brightness */              
+#define RGBLIGHT_LAYERS_RETAIN_VAL
+
+/* Overriding RGB Lighting on/off status */
+#define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF  
+
+/* If defined, the RGB lighting will be switched off when the host goes to sleep */  
+#define RGBLIGHT_SLEEP      

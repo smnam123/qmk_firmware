@@ -16,7 +16,5 @@
 
 #pragma once
 
-/* 4 by default */
-/* #define DYNAMIC_KEYMAP_LAYER_COUNT 8 */
 
 #define TAPPING_TOGGLE 1

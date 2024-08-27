@@ -20,6 +20,16 @@
             "rainbow_swirl": true
         }
     },
+    "features": {
+        "bootmagic": true,
+        "command": false,
+        "console": false,
+        "extrakey": true,
+        "key_lock": true,
+        "mousekey": false,
+        "nkro": false,
+        "rgblight": true
+    },
     "matrix_pins": {
         "cols": ["F5", "C7", "B7", "B2", "B4"],
         "rows": ["E6", "F0", "D6", "D2", "B6"]

@@ -1,4 +1,4 @@
-/* Copyright 2022 Nikolay N
+/* Copyright 2021 Andrzej Ressel (andrzej.ressel@gmail.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,5 +16,4 @@
 
 #pragma once
 
-/* 4 by default */
-#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+#define RGBLIGHT_LAYERS
