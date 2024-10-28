@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, KC_UP,   _______, KC_HOME, _______, KC_F7,   _______, _______, _______, _______, _______, MACRO_0, _______, _______,
         _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  MO(2),   KC_F8,   _______, _______, RGB_TOG, _______, _______, _______, _______, _______,
         _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, QK_LOCK, KC_F9,   _______, _______, _______, _______, _______, _______, RGB_VAI, _______,
-        _______, _______, _______, _______, _______, KC_TRNS, _______, KC_DEL,  KC_INS,  _______, _______, KC_RCTL, RGB_RMOD,RGB_VAD, RGB_MOD
+        _______, _______, _______, _______, _______, KC_TRNS, _______, _______, KC_DEL,  _______, KC_INS, KC_RCTL, RGB_RMOD,RGB_VAD, RGB_MOD
     ),
 
     /* Keymap _SYST: System Layer
